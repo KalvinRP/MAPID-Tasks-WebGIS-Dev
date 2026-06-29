@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PuSpa — Rating Fasilitas Umum Jakarta Utara</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-teal-50 text-gray-800 leading-relaxed">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="sticky top-0 z-10 flex items-center justify-between bg-teal-700 px-8 py-3.5 text-white shadow-md">
+    <div class="flex items-center gap-2 text-2xl font-extrabold tracking-wide">
+      <span class="inline-block h-3 w-3 rounded-full bg-amber-500"></span> PuSpa
+    </div>
+    <ul class="flex gap-1.5">
+      <li><a href="index.html" class="rounded-lg bg-amber-500 px-4 py-2 font-medium text-gray-800">Home</a></li>
+      <li><a href="about.html" class="rounded-lg px-4 py-2 font-medium hover:bg-teal-800">About</a></li>
+      <li><a href="map.html" class="rounded-lg px-4 py-2 font-medium hover:bg-teal-800">Map</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MAIN ===== -->
+  <main class="mx-auto max-w-5xl px-5">
+    <section class="px-5 pb-12 pt-16 text-center">
+      <h1 class="text-5xl font-bold tracking-tight text-teal-800"><span class="text-amber-500">Pu</span>Spa</h1>
+      <p class="mx-auto mt-3 max-w-xl text-xl text-gray-500">
+        <strong>Public Space Rating</strong> — platform partisipatif untuk menilai
+        dan memetakan kualitas fasilitas umum di ruang publik Jakarta Utara.
+      </p>
+      <div class="mt-7 flex flex-wrap items-center justify-center gap-3.5">
+        <a href="map.html"
+          class="rounded-full bg-teal-700 px-8 py-3.5 font-semibold text-white shadow-lg shadow-teal-700/30 transition hover:-translate-y-0.5">Jelajahi
+          Peta Fasilitas →</a>
+        <button type="button"
+          class="rounded-full bg-amber-500 px-8 py-3.5 font-bold text-gray-800 shadow-lg shadow-amber-500/30 transition hover:-translate-y-0.5">📷
+          Buka Kamera &amp; Scan QR</button>
+      </div>
+      <p class="mx-auto mt-3.5 max-w-lg text-sm text-gray-500">
+        Pindai kode QR yang terpasang di fasilitas terdaftar untuk membuka
+        halaman rating-nya secara langsung.
+      </p>
+    </section>
+
+    <section class="mb-10 rounded-2xl bg-white p-9 shadow-md">
+      <h2 class="mb-3 border-l-4 border-amber-500 pl-3 text-2xl font-bold text-teal-800">Tentang PuSpa</h2>
+      <p class="mb-3">
+        <strong>PuSpa (Public Space)</strong> adalah aplikasi web berbasis WebGIS yang
+        memungkinkan warga memberikan rating terhadap fasilitas umum di ruang publik —
+        seperti taman kota, halte, toilet umum, area pejalan kaki, dan ruang terbuka hijau —
+        yang tersebar di wilayah <strong>Jakarta Utara</strong>.
+      </p>
+      <p>
+        Dengan mengumpulkan penilaian langsung dari masyarakat, PuSpa membantu pemerintah
+        daerah dan pengelola ruang publik mengetahui fasilitas mana yang perlu perbaikan,
+        sekaligus mendorong transparansi dan partisipasi publik dalam menjaga kualitas kota.
+      </p>
+    </section>
+
+    <section class="mb-12 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-5">
+      <div class="rounded-xl border-t-4 border-teal-700 bg-white p-6 text-center shadow">
+        <div class="mb-2 text-4xl">🗺️</div>
+        <h3 class="mb-1.5 text-lg font-bold text-teal-800">Peta Interaktif</h3>
+        <p class="text-sm text-gray-500">Lihat sebaran fasilitas umum langsung di atas peta WebGIS.</p>
+      </div>
+      <div class="rounded-xl border-t-4 border-teal-700 bg-white p-6 text-center shadow">
+        <div class="mb-2 text-4xl">⭐</div>
+        <h3 class="mb-1.5 text-lg font-bold text-teal-800">Rating Warga</h3>
+        <p class="text-sm text-gray-500">Beri penilaian bintang berdasarkan pengalaman Anda sendiri.</p>
+      </div>
+      <div class="rounded-xl border-t-4 border-teal-700 bg-white p-6 text-center shadow">
+        <div class="mb-2 text-4xl">📊</div>
+        <h3 class="mb-1.5 text-lg font-bold text-teal-800">Data Terbuka</h3>
+        <p class="text-sm text-gray-500">Rekap penilaian dapat diakses dan dipantau secara transparan.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="mt-10 bg-teal-800 px-5 py-7 text-center text-teal-100">
+    <p class="font-bold text-white">PuSpa — Public Space Rating</p>
+    <small class="text-teal-300">© 2026 PuSpa. Ruang publik Jakarta Utara. Dibuat untuk WebGIS Development Bootcamp
+      MAPID Academy</small>
+  </footer>
+</body>
+
+</html>

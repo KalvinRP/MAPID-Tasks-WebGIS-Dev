@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map — PuSpa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-teal-50 text-gray-800 leading-relaxed">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="sticky top-0 z-10 flex items-center justify-between bg-teal-700 px-8 py-3.5 text-white shadow-md">
+    <div class="flex items-center gap-2 text-2xl font-extrabold tracking-wide">
+      <span class="inline-block h-3 w-3 rounded-full bg-amber-500"></span> PuSpa
+    </div>
+    <ul class="flex gap-1.5">
+      <li><a href="index.html" class="rounded-lg px-4 py-2 font-medium hover:bg-teal-800">Home</a></li>
+      <li><a href="about.html" class="rounded-lg px-4 py-2 font-medium hover:bg-teal-800">About</a></li>
+      <li><a href="map.html" class="rounded-lg bg-amber-500 px-4 py-2 font-medium text-gray-800">Map</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MAIN ===== -->
+  <main class="mx-auto max-w-5xl px-5 py-9">
+    <h1 class="mb-1 text-3xl font-bold text-teal-800">Peta Fasilitas Umum</h1>
+    <p class="mb-7 text-gray-500">
+      Peta WebGIS interaktif menampilkan sebaran fasilitas umum di Jakarta Utara
+      beserta penilaiannya.
+    </p>
+    <p><strong>Catatan:</strong> Peta masih <em>dummy</em>, akan dihubungkan ke OSM & GeoMAPID nanti.</p>
+
+    <div class="grid items-start gap-6 md:grid-cols-[2fr_1fr]">
+      <!-- WebGIS map -->
+      <div class="overflow-hidden rounded-2xl bg-white shadow-lg">
+        <img class="block h-auto w-full" src="screenshot-20260626-132240.png" alt="Peta fasilitas umum Jakarta Utara">
+        <div class="bg-teal-100 px-4 py-2.5 text-center text-sm font-semibold text-teal-800">🧭 Peta WebGIS — Wilayah
+          Jakarta Utara</div>
+      </div>
+
+      <!-- Legend -->
+      <aside class="rounded-2xl bg-white p-5 shadow-lg">
+        <h3 class="mb-3 border-l-4 border-amber-500 pl-2.5 text-lg font-bold text-teal-800">Legenda</h3>
+        <ul class="space-y-0.5 text-sm">
+          <li class="flex items-center gap-2.5 py-1.5"><span
+              class="h-3.5 w-3.5 flex-shrink-0 rounded-full bg-green-600"></span> Rating Baik (4–5 ⭐)</li>
+          <li class="flex items-center gap-2.5 py-1.5"><span
+              class="h-3.5 w-3.5 flex-shrink-0 rounded-full bg-amber-500"></span> Rating Cukup (3 ⭐)</li>
+          <li class="flex items-center gap-2.5 py-1.5"><span
+              class="h-3.5 w-3.5 flex-shrink-0 rounded-full bg-red-600"></span> Rating Kurang (1–2 ⭐)</li>
+          <li class="flex items-center gap-2.5 py-1.5"><span class="h-3.5 w-3.5 flex-shrink-0 rounded-full"
+              style="background:#cfe6b8;"></span> Area Hijau / Taman</li>
+          <li class="flex items-center gap-2.5 py-1.5"><span class="h-3.5 w-3.5 flex-shrink-0 rounded-full"
+              style="background:#acd2f0;"></span> Badan Air / Laut</li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- Ratings table -->
+    <section class="mt-6 rounded-2xl bg-white p-6 shadow-lg">
+      <h2 class="mb-4 border-l-4 border-amber-500 pl-3 text-2xl font-bold text-teal-800">Rekap Rating Fasilitas</h2>
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-teal-700 text-white">
+            <th class="border-b border-gray-200 px-3.5 py-2.5 text-left">No</th>
+            <th class="border-b border-gray-200 px-3.5 py-2.5 text-left">Nama Fasilitas</th>
+            <th class="border-b border-gray-200 px-3.5 py-2.5 text-left">Kecamatan</th>
+            <th class="border-b border-gray-200 px-3.5 py-2.5 text-left">Kategori</th>
+            <th class="border-b border-gray-200 px-3.5 py-2.5 text-left">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="[&>tr:hover]:bg-teal-50">
+          <tr>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">1</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Taman Kota Tanjung Priok</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Tanjung Priok</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Ruang Terbuka Hijau</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5"><span class="tracking-widest text-amber-500">★★★★☆</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">2</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Halte Bus Sunter</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Tanjung Priok</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Transportasi</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5"><span class="tracking-widest text-amber-500">★★★☆☆</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">3</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Toilet Umum Kelapa Gading</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Kelapa Gading</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Sanitasi</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5"><span class="tracking-widest text-amber-500">★★☆☆☆</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">4</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">RTH Marunda</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Cilincing</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Ruang Terbuka Hijau</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5"><span class="tracking-widest text-amber-500">★★★★★</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">5</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Pelataran Pejalan Kaki Penjaringan</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Penjaringan</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5">Pedestrian</td>
+            <td class="border-b border-gray-200 px-3.5 py-2.5"><span class="tracking-widest text-amber-500">★★★☆☆</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Rating form -->
+    <section class="mt-6 rounded-2xl bg-white p-6 shadow-lg">
+      <h2 class="mb-4 border-l-4 border-amber-500 pl-3 text-2xl font-bold text-teal-800">Beri Rating Fasilitas</h2>
+      <p class="mb-4 text-gray-500">
+        Bagikan penilaian Anda terhadap fasilitas umum yang pernah dikunjungi.
+      </p>
+      <form onsubmit="return false;">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="flex flex-col">
+            <label for="nama" class="mb-1.5 text-sm font-semibold">Nama Anda</label>
+            <input type="text" id="nama" name="nama" placeholder="cth. Budi Santoso"
+              class="rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:border-teal-700 focus:outline focus:outline-2 focus:outline-teal-700">
+          </div>
+          <div class="flex flex-col">
+            <label for="email" class="mb-1.5 text-sm font-semibold">Email</label>
+            <input type="email" id="email" name="email" placeholder="nama@email.com"
+              class="rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:border-teal-700 focus:outline focus:outline-2 focus:outline-teal-700">
+          </div>
+          <div class="flex flex-col">
+            <label for="fasilitas" class="mb-1.5 text-sm font-semibold">Pilih Fasilitas</label>
+            <select id="fasilitas" name="fasilitas"
+              class="rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:border-teal-700 focus:outline focus:outline-2 focus:outline-teal-700">
+              <option value="">-- Pilih fasilitas --</option>
+              <option>Taman Kota Tanjung Priok</option>
+              <option>Halte Bus Sunter</option>
+              <option>Toilet Umum Kelapa Gading</option>
+              <option>RTH Marunda</option>
+              <option>Pelataran Pejalan Kaki Penjaringan</option>
+            </select>
+          </div>
+          <div class="flex flex-col">
+            <label for="rating" class="mb-1.5 text-sm font-semibold">Rating (1–5)</label>
+            <select id="rating" name="rating"
+              class="rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:border-teal-700 focus:outline focus:outline-2 focus:outline-teal-700">
+              <option value="5">★★★★★ — Sangat Baik</option>
+              <option value="4">★★★★ — Baik</option>
+              <option value="3">★★★ — Cukup</option>
+              <option value="2">★★ — Kurang</option>
+              <option value="1">★ — Sangat Kurang</option>
+            </select>
+          </div>
+          <div class="flex flex-col sm:col-span-2">
+            <label for="komentar" class="mb-1.5 text-sm font-semibold">Komentar</label>
+            <textarea id="komentar" name="komentar" rows="3"
+              placeholder="Ceritakan pengalaman Anda terhadap fasilitas ini..."
+              class="rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:border-teal-700 focus:outline focus:outline-2 focus:outline-teal-700"></textarea>
+          </div>
+          <div class="flex flex-col sm:col-span-2">
+            <label class="mb-1.5 text-sm font-semibold">Foto Pendukung Review</label>
+            <button type="button"
+              class="inline-flex w-fit items-center gap-2 rounded-xl border-2 border-dashed border-teal-700 bg-white px-[18px] py-3 text-sm font-semibold text-teal-800 transition hover:bg-teal-100">📸
+              Ambil Foto Fasilitas</button>
+            <p class="mt-1.5 text-xs text-gray-500">
+              Lampirkan foto sebagai bukti pendukung penilaian Anda.
+            </p>
+          </div>
+        </div>
+        <button type="submit"
+          class="mt-4 rounded-full bg-teal-700 px-8 py-3 font-semibold text-white shadow-lg shadow-teal-700/30 transition hover:-translate-y-0.5">Kirim
+          Rating</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="mt-10 bg-teal-800 px-5 py-7 text-center text-teal-100">
+    <p class="font-bold text-white">PuSpa — Public Space Rating</p>
+    <small class="text-teal-300">© 2026 PuSpa. Ruang publik Jakarta Utara. Dibuat untuk WebGIS Development Bootcamp
+      MAPID Academy</small>
+  </footer>
+</body>
+
+</html>
