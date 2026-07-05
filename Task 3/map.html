@@ -57,6 +57,11 @@
       </aside>
     </div>
 
+    <button id="fetchAllFacility"
+      class="mx-auto mt-4 block rounded-lg bg-amber-500 px-6 py-3 text-white hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
+      Tampilkan Seluruh Lokasi Fasilitas
+    </button>
+
     <!-- Ratings table -->
     <section class="mt-6 rounded-2xl bg-white p-6 shadow-lg">
       <h2 class="mb-4 border-l-4 border-amber-500 pl-3 text-2xl font-bold text-teal-800">Rekap Rating Fasilitas</h2>
@@ -182,9 +187,94 @@
   <!-- ===== FOOTER ===== -->
   <footer class="mt-10 bg-teal-800 px-5 py-7 text-center text-teal-100">
     <p class="font-bold text-white">PuSpa — Public Space Rating</p>
-    <small class="text-teal-300">© 2026 PuSpa. Ruang publik Jakarta Utara. Dibuat untuk WebGIS Development Bootcamp
-      MAPID Academy</small>
+    <small class="text-teal-300">© 2026 PuSpa. Ruang publik Jakarta Utara. Dibuat untuk tujuan pembelajaran.</small>
   </footer>
+
+  <!-- ==== MODAL ==== -->
+   // Task 4 No. 1: Interaksi dinamis dan menampilkan elemen (modal) saat klik tombol
+  <div id="modalCheckbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4">
+
+    <div class="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
+
+      <h2 class="mb-4 text-xl font-bold text-teal-800">
+        Pilih Fasilitas
+      </h2>
+
+      <!-- ambil data fasilitas dari API dan tampilkan di sini -->
+      <form>
+        <div id="facilityContainer" class="max-h-[60vh] space-y-2 overflow-y-auto pr-2">
+        </div>
+        <!-- buat seolah menampilkan setelah checkbox dipilih -->
+        <button type="button" id="closeModal"
+          class="mt-4 w-full rounded-lg bg-teal-700 px-4 py-2 text-white hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2">
+          Tampilkan
+        </button>
+      </form>
+
+    </div>
+  </div>
 </body>
+
+
+<script>
+  const fetchAllFacilityButton = document.getElementById('fetchAllFacility');
+  const facilityContainer = document.getElementById('facilityContainer');
+
+  // Task 4 No. 2: Fetch dari API Geomapid lalu tampilkan data dinamisnya
+  async function loadFacilities() {
+    // pakai endpoint lapangan dulu karena menampilkan banyak titik dan ada di lokasi studi yaitu Jakut
+    const res = await fetch(
+      'https://geoserver.mapid.io/layers_new/get_layer?api_key=8d07326afdb74cff91d7189b20ba5f45&layer_id=6a4a46333b4813529f1797cc&project_id=6a2fface6684a940bdb019b5'
+    );
+
+    const data = await res.json();
+
+    facilityContainer.innerHTML = "";
+
+    data.features.forEach((feature, index) => {
+      const nama = feature.properties.NAMA;
+
+      facilityContainer.insertAdjacentHTML(
+        "beforeend",
+        `
+      <label class="flex items-center gap-2">
+        <input
+          type="checkbox"
+          id="facility-${index}"
+          name="fasilitas"
+          value="${nama}"
+          class="h-4 w-4"
+        >
+        <span class="text-sm font-medium text-gray-700">
+          ${nama}
+        </span>
+      </label>
+      `
+      );
+    });
+  }
+
+  function showModal() {
+    const modal = document.getElementById('modalCheckbox');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function hideModal() {
+    const modal = document.getElementById('modalCheckbox');
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+  }
+
+  fetchAllFacilityButton.addEventListener('click', async () => {
+    await loadFacilities();
+    showModal();
+  });
+
+  const closeModalButton = document.getElementById('closeModal');
+  closeModalButton.addEventListener('click', () => {
+    hideModal();
+  });
+</script>
 
 </html>
