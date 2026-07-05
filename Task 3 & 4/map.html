@@ -191,14 +191,22 @@
   </footer>
 
   <!-- ==== MODAL ==== -->
-   // Task 4 No. 1: Interaksi dinamis dan menampilkan elemen (modal) saat klik tombol
+  <!-- Task 4 No. 1: Interaksi dinamis dan menampilkan elemen (modal) saat klik tombol -->
   <div id="modalCheckbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4">
 
     <div class="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
 
-      <h2 class="mb-4 text-xl font-bold text-teal-800">
-        Pilih Fasilitas
-      </h2>
+      <div class="mb-4 flex items-center justify-between">
+        <h2 class="text-xl font-bold text-teal-800">
+          Pilih Fasilitas
+        </h2>
+
+        <!-- Task 4 No. 1: (Masih tambah interaksi dinamis, reuse hideModal sehingga tombol close dan tampilkan sementara masih menjalankan fungsi yang sama) -->
+        <button id="closeModal" type="button"
+          class="rounded-full p-2 text-gray-600 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-700">
+          ✖
+        </button>
+      </div>
 
       <!-- ambil data fasilitas dari API dan tampilkan di sini -->
       <form>
